@@ -1,5 +1,5 @@
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
-Do Not Translate or Localize
+Do Not Translate or Localizedgfdg
 
 This file provides information in Section A regarding components that are being relicensed to you by Microsoft under Microsoft's software licensing terms, and information in Section B regarding components that are being made available to you by Microsoft under the original licensing terms. Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
