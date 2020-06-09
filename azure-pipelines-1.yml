@@ -4,7 +4,20 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+    include:
+      - master
+      - refs/tags/*
+  paths:
+    exclude:
+      - '**/*.md'
+      - .vscode/*
+      - .git*
+      - .editorconfig
+
+pr:
+  - master
+  - release/*
 
 pool:
   vmImage: 'ubuntu-latest'
