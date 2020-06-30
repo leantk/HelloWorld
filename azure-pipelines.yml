@@ -1,7 +1,13 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(BuildID)
+
+variables:
+  - name: DOCKER_BUILDKIT
+    value: 1
+  - group: AWS
+  - name: ENABLE_DOCKER_PUBLISH
+    value: ${{ or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'), startsWith(variables['Build.SourceBranch'], 'refs/tags')) }}
+  - name: ENABLE_GLOBAL_RELEASE
+    value: ${{ or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'), startsWith(variables['Build.SourceBranch'], 'refs/tags')) }}
 
 trigger:
   branches:
