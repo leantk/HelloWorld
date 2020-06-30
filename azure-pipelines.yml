@@ -7,6 +7,17 @@ trigger:
   branches:
     include:
       - master
+      - refs/tags/*
+  paths:
+    exclude:
+      - '**/*.md'
+      - .vscode/*
+      - .git*
+      - .editorconfig
+
+pr:
+  - master
+  - release/*
 
 jobs:
 - job: Job1
